@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="170dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="@drawable/ripple_8dp"
+    android:elevation="4dp"
+    android:background="@drawable/white_back_20dp"
+    android:layout_margin="10dp">
+
+    <LinearLayout
+        android:id="@+id/back_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/blue_gradient_20dp"
+        android:backgroundTint="@color/secundary_blue_60A"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.20">
+
+        <ImageView
+            android:id="@+id/stat_icon"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_margin="11dp"
+            android:src="@drawable/ic_round_account_balance_wallet_24"
+            android:tint="@color/white" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/stat_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/comforta_bold"
+        android:text="Ventas"
+        android:textColor="@color/black"
+        android:textSize="21sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/back_view" />
+
+    <TextView
+        android:id="@+id/stat_percent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/comforta_bold"
+        android:text="+ 15%"
+        android:textColor="@color/green"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/stat_name"
+        app:layout_constraintVertical_bias="0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

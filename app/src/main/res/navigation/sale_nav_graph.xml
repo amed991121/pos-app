@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/createSaleFragment">
+
+    <fragment
+        android:id="@+id/createSaleFragment"
+        android:name="com.savent.erp.presentation.ui.fragment.CreateSaleFragment"
+        android:label="fragment_create_sale"
+        tools:layout="@layout/fragment_create_sale" >
+        <action
+            android:id="@+id/action_createSaleFragment_to_addClientFragment"
+            app:destination="@id/addClientFragment" />
+        <action
+            android:id="@+id/action_createSaleFragment_to_addProductsFragment"
+            app:destination="@id/addProductsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addClientFragment"
+        android:name="com.savent.erp.presentation.ui.fragment.AddClientFragment"
+        android:label="fragment_add_client"
+        tools:layout="@layout/fragment_add_client" />
+    <fragment
+        android:id="@+id/addProductsFragment"
+        android:name="com.savent.erp.presentation.ui.fragment.AddProductsFragment"
+        android:label="fragment_add_products"
+        tools:layout="@layout/fragment_add_products" >
+        <action
+            android:id="@+id/action_addProductsFragment_to_checkoutFragment"
+            app:destination="@id/checkoutFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/checkoutFragment"
+        android:name="com.savent.erp.presentation.ui.fragment.CheckoutFragment"
+        android:label="fragment_checkout"
+        tools:layout="@layout/fragment_checkout" />
+</navigation>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="30dp">
+
+    <ImageView
+        android:id="@+id/close"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_margin="10dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="@drawable/ripple_8dp"
+        android:padding="3dp"
+        android:src="@drawable/ic_round_close_24"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/gray_125" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/payment_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="5dp"
+        android:foreground="@drawable/ripple_20dp"
+        android:background="@drawable/white_back_20dp"
+        android:backgroundTint="@color/gray_235"
+        android:layout_marginStart="10dp"
+        app:layout_constraintTop_toBottomOf="@id/close"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/payment_icon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/credit_card_draw"
+            android:layout_marginStart="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/payment_method"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/comforta_bold"
+            android:layout_marginStart="6dp"
+            android:textColor="@color/black"
+            android:text="@string/credit"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@id/payment_icon"
+            app:layout_constraintBottom_toBottomOf="@id/payment_icon"
+            />
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/ic_round_arrow_drop_down_24"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toEndOf="@id/payment_method"
+            app:layout_constraintBottom_toBottomOf="@id/payment_method"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/to_collect_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/comforta_semibold"
+        android:text="@string/to_collect"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@id/payment_container"
+        app:layout_constraintTop_toBottomOf="@id/payment_container" />
+
+    <TextView
+        android:id="@+id/to_collect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:fontFamily="@font/comforta_semibold"
+        android:textSize="20sp"
+        android:text="$0.00"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@id/to_collect_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/to_collect_label" />
+
+    <TextView
+        android:id="@+id/change_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/comforta_semibold"
+        android:text="@string/change"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@id/to_collect_label"
+        app:layout_constraintTop_toBottomOf="@id/to_collect_label"
+        />
+
+    <TextView
+        android:id="@+id/change"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:fontFamily="@font/comforta_semibold"
+        android:textSize="20sp"
+        android:text="$0.00"
+        app:layout_constraintBottom_toBottomOf="@id/change_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/change_label" />
+
+    <EditText
+        android:id="@+id/collect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="25dp"
+        android:padding="10dp"
+        android:textSize="20sp"
+        android:hint="@string/amount_collected"
+        android:textColor="@color/black"
+        android:inputType="numberDecimal"
+        android:fontFamily="@font/comforta_semibold"
+        android:background="@drawable/gray_back_15dp"
+        android:backgroundTint="@color/gray_248"
+        android:foreground="@drawable/ripple_15dp"
+        app:layout_constraintStart_toStartOf="@id/payment_container"
+        app:layout_constraintTop_toBottomOf="@id/change_label"/>
+
+    <TextView
+        android:id="@+id/go_on"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/blue_gradient_15dp"
+        android:backgroundTint="@color/dark_blue"
+        android:fontFamily="@font/comforta_bold"
+        android:padding="10dp"
+        android:text="@string/agree"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@id/change"
+        app:layout_constraintBottom_toBottomOf="@id/collect"
+        app:layout_constraintTop_toTopOf="@id/collect"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

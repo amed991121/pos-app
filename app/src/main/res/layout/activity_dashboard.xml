@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.savent.erp.presentation.viewmodel.DashboardViewModel" />
+        <import type="android.view.View" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.ui.activity.DashboardActivity">
+
+        <ProgressBar
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:indeterminate="true"
+            android:foregroundGravity="center"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintDimensionRatio="4.5:1"
+            android:layout_marginBottom="25dp"
+            android:indeterminateTint="@color/primary_blue"
+            android:visibility= "@{viewModel.loading? View.VISIBLE: View.GONE}"
+            android:translationZ="21dp"
+            app:indicatorColor="@color/primary_blue"
+            />
+
+        <TextView
+            android:id="@+id/business_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="25dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/comforta_bold"
+            android:text="@{viewModel.businessBasicsItem.name ?? @string/empty}"
+            android:textColor="@color/white"
+            android:textSize="38sp"
+            app:layout_constraintEnd_toStartOf="@id/business_image"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/location_icon"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginTop="18dp"
+            android:src="@drawable/ic_round_location_on_24"
+            android:tint="@color/white"
+            app:layout_constraintStart_toStartOf="@id/business_name"
+            app:layout_constraintTop_toBottomOf="@id/business_name"
+            />
+
+        <TextView
+            android:id="@+id/business_location"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="-2dp"
+            android:fontFamily="@font/comforta_semibold"
+            android:singleLine="true"
+            android:text="@{viewModel.businessBasicsItem.address ?? @string/empty}"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="@id/location_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/location_icon"
+            />
+
+
+        <ImageView
+            android:id="@+id/store_icon"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@drawable/ic_round_store_24"
+            android:tint="@color/white"
+            android:layout_marginTop="15dp"
+            app:layout_constraintStart_toStartOf="@id/location_icon"
+            app:layout_constraintTop_toBottomOf="@id/business_location"
+            />
+
+        <TextView
+            android:id="@+id/store"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="-2dp"
+            android:fontFamily="@font/comforta_semibold"
+            android:singleLine="true"
+            android:text="@{viewModel.businessBasicsItem.storeName ?? @string/empty}"
+            android:textColor="@color/white"
+            android:textSize="21sp"
+            app:layout_constraintStart_toEndOf="@id/store_icon"
+            app:layout_constraintBottom_toBottomOf="@id/store_icon"
+            app:layout_constraintEnd_toStartOf="@+id/exit"
+            />
+        <ImageView
+            android:id="@+id/exit"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/fire_exit"
+            android:tint="@color/white"
+            android:layout_marginEnd="25dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/store"
+            android:onClick="exitStore"
+            />
+
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/business_image"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/savent_logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/business_name" />
+
+        <View
+            android:id="@+id/top_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="-160dp"
+            android:background="@drawable/primary_blue_gradient"
+            android:translationZ="-1dp"
+            app:layout_constraintBottom_toTopOf="@id/bottom_layout"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/bottom_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/white_back_20dp_top"
+            android:elevation="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/store">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/middle_guide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5"
+               />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/bottom_actions_guide"
+                android:layout_width="wrap_content"
+                android:layout_height="2dp"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.38"
+                />
+
+            <View
+                android:id="@+id/middle_view"
+                android:layout_width="2dp"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="@id/bottom_debts"
+                app:layout_constraintStart_toStartOf="@id/middle_guide"
+                android:background="@color/gray_248"
+                />
+
+            <View
+                android:id="@+id/bottom_actions_view"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toTopOf="@id/bottom_actions_guide"
+                app:layout_constraintEnd_toEndOf="@id/bottom_actions_guide"
+                android:background="@color/gray_248"
+                />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/create_sale"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:layout_constraintBottom_toBottomOf="@id/bottom_actions_guide"
+                app:layout_constraintEnd_toEndOf="@id/middle_guide"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:id="@+id/back_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    app:layout_constraintVertical_bias="0.4"
+                    android:foreground="@drawable/ripple_15dp"
+                    android:backgroundTint="@color/gray_248"
+                    android:background="@drawable/gray_back_15dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                    <ImageView
+                        android:id="@+id/action_icon"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/add_to_cart_draw"
+                        android:layout_margin="20dp"
+                        />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/action"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/comforta_regular"
+                    android:singleLine="true"
+                    android:text="@string/create_sale"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/back_view" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/add_client"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:layout_constraintBottom_toBottomOf="@id/bottom_actions_guide"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/middle_guide"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:id="@+id/back_view1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    app:layout_constraintVertical_bias="0.4"
+                    android:foreground="@drawable/ripple_15dp"
+                    android:backgroundTint="@color/gray_248"
+                    android:background="@drawable/gray_back_15dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                    <ImageView
+                        android:id="@+id/action_icon1"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="20dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/add_person_raw"
+                        />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/action1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/comforta_regular"
+                    android:singleLine="true"
+                    android:text="@string/add_client"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/back_view1" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:id="@+id/bottom_debts_view_div"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/bottom_debts"
+                android:background="@color/gray_248"
+                />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/get_debts"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:layout_constraintBottom_toBottomOf="@id/bottom_debts"
+                app:layout_constraintEnd_toEndOf="@id/middle_guide"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/bottom_actions_guide">
+
+                <LinearLayout
+                    android:id="@+id/back_view2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    app:layout_constraintVertical_bias="0.4"
+                    android:foreground="@drawable/ripple_15dp"
+                    android:backgroundTint="@color/gray_248"
+                    android:background="@drawable/gray_back_15dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    >
+
+                    <ImageView
+                        android:id="@+id/action_icon2"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="20dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/loan_draw"
+                        />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/action2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/comforta_regular"
+                    android:singleLine="true"
+                    android:text="@string/debts_header"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.509"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/back_view2" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/get_remaining_products"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:layout_constraintBottom_toBottomOf="@id/bottom_actions_guide"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/middle_guide"
+                app:layout_constraintTop_toTopOf="parent"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/back_view3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    app:layout_constraintVertical_bias="0.4"
+                    android:foreground="@drawable/ripple_15dp"
+                    android:backgroundTint="@color/gray_248"
+                    android:background="@drawable/gray_back_15dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+
+                    <ImageView
+                        android:id="@+id/action_icon3"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/box_draw2"
+                        android:layout_margin="20dp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/action3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/comforta_regular"
+                    android:singleLine="true"
+                    android:text="@string/products"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/back_view3" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/get_debt_payments"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:layout_constraintBottom_toBottomOf="@id/bottom_debts"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/middle_guide"
+                app:layout_constraintTop_toTopOf="@id/bottom_actions_guide">
+
+                <LinearLayout
+                    android:id="@+id/back_view4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    app:layout_constraintVertical_bias="0.4"
+                    android:foreground="@drawable/ripple_15dp"
+                    android:backgroundTint="@color/gray_248"
+                    android:background="@drawable/gray_back_15dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    >
+
+                    <ImageView
+                        android:id="@+id/action_icon4"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="20dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/wallet_draw"
+                        />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/action4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/comforta_regular"
+                    android:singleLine="true"
+                    android:text="@string/debt_payments"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.509"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/back_view4" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/bottom_debts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.75"/>
+
+            <LinearLayout
+                android:id="@+id/create_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginEnd="40dp"
+                android:padding="10dp"
+                android:background="@drawable/gray_back_15dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:onClick="seeSales">
+
+                <ImageView
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:src="@drawable/cashier_draw"
+                    android:layout_gravity="center"
+                     />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/movements_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginBottom="20dp"
+                android:padding="10dp"
+                android:background="@drawable/gray_back_15dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:onClick="seeMovements">
+
+                <ImageView
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:src="@drawable/checklist"
+                    android:layout_gravity="center"
+                    />
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

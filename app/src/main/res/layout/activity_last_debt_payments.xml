@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.savent.erp.presentation.viewmodel.DebtsViewModel" />
+
+        <import type="android.view.View" />
+
+    </data>
+
+    <androidx.constraintlayout.motion.widget.MotionLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:backgroundTint="@color/white"
+        app:layoutDescription="@xml/activity_last_sale_scene"
+        tools:context=".presentation.ui.activity.LastSalesActivity">
+
+
+        <ImageView
+            android:id="@+id/back_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="15dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="@drawable/ripple_8dp"
+            android:onClick="back"
+            android:padding="4dp"
+            android:src="@drawable/ic_round_arrow_back_24"
+            android:tint="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/screen_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="2dp"
+            android:fontFamily="@font/comforta_bold"
+            android:singleLine="true"
+            android:text="@string/last_debt_payments"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="26sp"
+            app:layout_constraintBottom_toBottomOf="@id/back_button"
+            app:layout_constraintEnd_toStartOf="@id/search"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@id/back_button" />
+
+        <EditText
+            android:id="@+id/search_edit"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="-2dp"
+            android:alpha="0"
+            android:background="@drawable/gray_235_back_18dp"
+            android:fontFamily="@font/comforta_semibold"
+            android:hint="@string/search"
+            android:paddingStart="20dp"
+            android:paddingTop="11dp"
+            android:paddingBottom="11dp"
+            android:textSize="19sp"
+            app:layout_constraintBottom_toBottomOf="@id/search"
+            app:layout_constraintEnd_toEndOf="@id/search"
+            app:layout_constraintStart_toStartOf="@id/search"
+            app:layout_constraintTop_toTopOf="@id/search" />
+
+        <ImageView
+            android:id="@+id/search"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="20dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="@drawable/ripple_8dp"
+            android:padding="5dp"
+            android:src="@drawable/ic_round_search_24"
+            android:tint="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/screen_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@id/screen_title"
+            app:layout_constraintTop_toTopOf="@id/screen_title" />
+
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/refresh_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintBottom_toTopOf="@id/sync_debt_payments_action"
+            app:layout_constraintTop_toBottomOf="@id/screen_title">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/debt_payments_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:fastScrollHorizontalThumbDrawable="@drawable/thumb_drawable"
+                app:fastScrollHorizontalTrackDrawable="@drawable/line_drawable"
+                app:fastScrollVerticalThumbDrawable="@drawable/thumb_drawable"
+                app:fastScrollVerticalTrackDrawable="@drawable/line_drawable"
+                app:fastScrollEnabled="true"/>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/sync_debt_payments_action"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginBottom="10dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintBottom_toTopOf="@id/revenue_label"
+            app:layout_constraintTop_toBottomOf="@id/refresh_layout">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/sync_debt_payments"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/white_back_20dp"
+                android:backgroundTint="@color/gray_243"
+                android:foreground="@drawable/ripple_20dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:fontFamily="@font/comforta_semibold"
+                    android:singleLine="true"
+                    android:text="@string/sync_debt_payments"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="21sp"
+                    app:layout_constraintBottom_toBottomOf="@id/sync_icon"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/sync_icon" />
+
+                <ImageView
+                    android:id="@+id/sync_icon"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/sync_draw"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </ImageView>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/bottom_div"
+            android:layout_width="0dp"
+            android:layout_height="1.5dp"
+            android:background="@color/gray_215_A50"
+            android:layout_marginTop="13dp"
+            app:layout_constraintTop_toBottomOf="@id/sync_debt_payments_action"
+            app:layout_constraintStart_toStartOf="@id/revenue_label"
+            app:layout_constraintEnd_toEndOf="@id/revenue"
+            />
+
+        <TextView
+            android:id="@+id/revenue_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:fontFamily="@font/comforta_bold"
+            android:text="@string/total_collected"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toTopOf="@id/sending_pending_label"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sync_debt_payments_action" />
+
+        <TextView
+            android:id="@+id/revenue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/comforta_regular"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="@id/revenue_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/revenue_label" />
+
+        <TextView
+            android:id="@+id/sending_pending_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/comforta_bold"
+            android:singleLine="true"
+            android:text="@string/sales_pending_sending"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            app:layout_constraintEnd_toStartOf="@id/sending_pending"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/revenue_label"
+            app:layout_constraintTop_toBottomOf="@id/revenue_label" />
+
+        <TextView
+            android:id="@+id/sending_pending"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/comforta_regular"
+            android:textColor="@color/red"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="@id/sending_pending_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/sending_pending_label" />
+
+        <TextView
+            android:id="@+id/total_debt_payments_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/comforta_bold"
+            android:singleLine="true"
+            android:text="@string/total_debt_payments"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/total_sales"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/sending_pending_label"
+            app:layout_constraintTop_toBottomOf="@id/sending_pending_label" />
+
+        <TextView
+            android:id="@+id/total_debt_payments"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/comforta_regular"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="@id/total_debt_payments_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/total_debt_payments_label" />
+
+
+    </androidx.constraintlayout.motion.widget.MotionLayout>
+</layout>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/movements_nav_graph"
+    app:startDestination="@id/movementsListFragment">
+
+    <fragment
+        android:id="@+id/movementsListFragment"
+        android:name="com.savent.erp.presentation.ui.fragment.MovementsListFragment"
+        android:label="fragment_movements_list"
+        tools:layout="@layout/fragment_movements_list" >
+        <action
+            android:id="@+id/action_movementsListFragment_to_createMovementFragment"
+            app:destination="@id/createMovementFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createMovementFragment"
+        android:name="com.savent.erp.presentation.ui.fragment.CreateMovementFragment"
+        android:label="CreateMovementFragment" />
+</navigation>

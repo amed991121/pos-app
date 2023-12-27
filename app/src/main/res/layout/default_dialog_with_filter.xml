@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:id="@+id/baseLayout"
+    android:layout_height="match_parent"
+    android:paddingBottom="20dp"
+    >
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/comforta_bold"
+        android:textColor="@color/black"
+        android:textSize="21sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/close"
+        android:layout_margin="10dp"
+        android:padding="3dp"
+        android:src="@drawable/ic_round_close_24"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/gray_125" />
+
+    <ImageView
+        android:id="@+id/iconSearch"
+        android:translationZ="1dp"
+        android:layout_marginEnd="15dp"
+        android:src="@drawable/ic_round_search_24"
+        android:layout_width="23dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="@id/searchView"
+        app:layout_constraintBottom_toBottomOf="@id/searchView"
+        app:layout_constraintRight_toRightOf="@id/searchView"
+
+        />
+
+    <EditText
+        android:id="@+id/searchView"
+        android:hint="@string/search"
+        android:paddingStart="15dp"
+        android:layout_marginStart="5dp"
+        android:background="@drawable/gray_back_15dp"
+        android:backgroundTint="@color/gray_235"
+        android:layout_marginEnd="15dp"
+        android:fontFamily="@font/comforta_semibold"
+        android:layout_marginTop="20dp"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintStart_toEndOf="@id/filter"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="45dp" />
+
+    <ImageView
+        android:id="@+id/filter"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/white_back_8dp"
+        android:backgroundTint="@color/gray_243"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="@drawable/ripple_8dp"
+        android:padding="10dp"
+        android:src="@drawable/filter"
+        android:tint="@color/black"
+        android:layout_marginStart="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/searchView"
+        app:layout_constraintBottom_toBottomOf="@id/searchView"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/filter"
+        />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

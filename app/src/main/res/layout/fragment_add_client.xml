@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.savent.erp.presentation.viewmodel.ClientsViewModel" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".presentation.ui.fragment.AddClientFragment">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/top_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.4" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/bottom_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.6" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/start_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.35" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/end_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.7" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/progress_layout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/gray_235_back_18dp"
+            android:elevation="5dp"
+            app:layout_constraintBottom_toBottomOf="@id/bottom_progress"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/end_progress"
+            app:layout_constraintStart_toStartOf="@id/start_progress"
+            app:layout_constraintTop_toTopOf="@id/top_progress"
+            android:padding="12dp"
+            android:visibility="gone">
+
+            <ProgressBar
+                android:id="@+id/progress"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:indeterminate="true"
+                android:indeterminateTint="@color/primary_blue"
+                app:layout_constraintBottom_toTopOf="@+id/progress_action"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/progress_action"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:textSize="17sp"
+                android:textColor="@color/black"
+                android:text="@string/locating_you"
+                android:layout_marginTop="10dp"
+                android:textAlignment="center"
+                app:layout_constraintTop_toBottomOf="@id/progress"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <ImageView
+            android:id="@+id/back_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="15dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="@drawable/ripple_8dp"
+            android:padding="4dp"
+            android:src="@drawable/ic_round_arrow_back_24"
+            android:tint="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/screen_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/comforta_bold"
+            android:text="@string/add_client"
+            android:textColor="@color/black"
+            android:textSize="26sp"
+            android:layout_marginBottom="2dp"
+            app:layout_constraintBottom_toBottomOf="@id/back_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <ScrollView
+            android:id="@+id/scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintBottom_toTopOf="@id/add_client"
+            app:layout_constraintTop_toBottomOf="@id/screen_title">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="15dp"
+                    android:src="@drawable/ic_round_person_24"
+                    android:translationZ="1dp"
+                    app:layout_constraintBottom_toBottomOf="@id/name_edit"
+                    app:layout_constraintStart_toStartOf="@id/name_edit"
+                    app:layout_constraintTop_toTopOf="@id/name_edit" />
+
+                <EditText
+                    android:id="@+id/name_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="35dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/gray_235_back_18dp"
+                    android:fontFamily="@font/comforta_regular"
+                    android:hint="@string/name"
+                    android:inputType="text"
+                    android:paddingStart="50dp"
+                    android:paddingTop="17dp"
+                    android:paddingBottom="17dp"
+                    android:textColorHint="@color/black"
+                    android:textSize="19sp"
+                    android:maxLength="50"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="15dp"
+                    android:src="@drawable/ic_round_edit_24"
+                    android:translationZ="1dp"
+                    app:layout_constraintBottom_toBottomOf="@id/paternal_name_edit"
+                    app:layout_constraintStart_toStartOf="@id/paternal_name_edit"
+                    app:layout_constraintTop_toTopOf="@id/paternal_name_edit" />
+
+                <EditText
+                    android:id="@+id/paternal_name_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginEnd="35dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/gray_235_back_18dp"
+                    android:fontFamily="@font/comforta_regular"
+                    android:hint="@string/paternal"
+                    android:inputType="text"
+                    android:maxLength="50"
+                    android:paddingStart="50dp"
+                    android:paddingTop="17dp"
+                    android:paddingBottom="17dp"
+                    android:textColorHint="@color/black"
+                    android:textSize="19sp"
+                    app:layout_constraintTop_toBottomOf="@id/name_edit" />
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="15dp"
+                    android:src="@drawable/ic_round_edit_24"
+                    android:translationZ="1dp"
+                    app:layout_constraintBottom_toBottomOf="@id/maternal_name_edit"
+                    app:layout_constraintStart_toStartOf="@id/maternal_name_edit"
+                    app:layout_constraintTop_toTopOf="@id/maternal_name_edit" />
+
+                <EditText
+                    android:id="@+id/maternal_name_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginEnd="35dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/gray_235_back_18dp"
+                    android:fontFamily="@font/comforta_regular"
+                    android:hint="@string/maternal"
+                    android:inputType="text"
+                    android:maxLength="50"
+                    android:paddingStart="50dp"
+                    android:paddingTop="17dp"
+                    android:paddingBottom="17dp"
+                    android:textColorHint="@color/black"
+                    android:textSize="19sp"
+                    app:layout_constraintTop_toBottomOf="@id/paternal_name_edit" />
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="15dp"
+                    android:src="@drawable/ic_round_info_24"
+                    android:translationZ="1dp"
+                    app:layout_constraintBottom_toBottomOf="@id/social_reason_edit"
+                    app:layout_constraintStart_toStartOf="@id/social_reason_edit"
+                    app:layout_constraintTop_toTopOf="@id/social_reason_edit" />
+
+                <EditText
+                    android:id="@+id/social_reason_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginEnd="35dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/gray_235_back_18dp"
+                    android:fontFamily="@font/comforta_regular"
+                    android:hint="@string/social_reason"
+                    android:inputType="text"
+                    android:paddingStart="50dp"
+                    android:paddingTop="17dp"
+                    android:paddingBottom="17dp"
+                    android:textColorHint="@color/black"
+                    android:textSize="19sp"
+                    app:layout_constraintTop_toBottomOf="@id/maternal_name_edit" />
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="15dp"
+                    android:src="@drawable/ic_round_info_24"
+                    android:translationZ="1dp"
+                    app:layout_constraintBottom_toBottomOf="@id/rfc_edit"
+                    app:layout_constraintStart_toStartOf="@id/rfc_edit"
+                    app:layout_constraintTop_toTopOf="@id/rfc_edit" />
+
+                <EditText
+                    android:id="@+id/rfc_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginEnd="35dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/gray_235_back_18dp"
+                    android:fontFamily="@font/comforta_regular"
+                    android:hint="@string/rfc"
+                    android:inputType="text"
+                    android:maxLength="13"
+                    android:paddingStart="50dp"
+                    android:paddingTop="17dp"
+                    android:paddingBottom="17dp"
+                    android:textColorHint="@color/black"
+                    android:textSize="19sp"
+                    app:layout_constraintTop_toBottomOf="@id/social_reason_edit" />
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="15dp"
+                    android:src="@drawable/ic_round_local_phone_24"
+                    android:translationZ="1dp"
+                    app:layout_constraintBottom_toBottomOf="@id/phone_number_edit"
+                    app:layout_constraintStart_toStartOf="@id/phone_number_edit"
+                    app:layout_constraintTop_toTopOf="@id/phone_number_edit" />
+
+                <EditText
+                    android:id="@+id/phone_number_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginEnd="35dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/gray_235_back_18dp"
+                    android:fontFamily="@font/comforta_regular"
+                    android:hint="@string/phone_number"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:paddingStart="50dp"
+                    android:paddingTop="17dp"
+                    android:paddingBottom="17dp"
+                    android:textColorHint="@color/black"
+                    android:textSize="19sp"
+                    app:layout_constraintTop_toBottomOf="@id/rfc_edit" />
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="15dp"
+                    android:src="@drawable/ic_baseline_alternate_email_24"
+                    android:translationZ="1dp"
+                    app:layout_constraintBottom_toBottomOf="@id/email_edit"
+                    app:layout_constraintStart_toStartOf="@id/email_edit"
+                    app:layout_constraintTop_toTopOf="@id/email_edit" />
+
+                <EditText
+                    android:id="@+id/email_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginEnd="35dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/gray_235_back_18dp"
+                    android:fontFamily="@font/comforta_regular"
+                    android:hint="@string/email"
+                    android:inputType="text"
+                    android:maxLength="50"
+                    android:paddingStart="50dp"
+                    android:paddingTop="17dp"
+                    android:paddingBottom="17dp"
+                    android:textColorHint="@color/black"
+                    android:textSize="19sp"
+                    app:layout_constraintTop_toBottomOf="@id/phone_number_edit" />
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="15dp"
+                    android:src="@drawable/ic_round_location_on_24"
+                    android:translationZ="1dp"
+                    app:layout_constraintBottom_toBottomOf="@id/street_edit"
+                    app:layout_constraintStart_toStartOf="@id/street_edit"
+                    app:layout_constraintTop_toTopOf="@id/street_edit" />
+
+
+                <EditText
+                    android:id="@+id/street_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginEnd="35dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/gray_235_back_18dp"
+                    android:fontFamily="@font/comforta_regular"
+                    android:hint="@string/street"
+                    android:inputType="text"
+                    android:maxLength="50"
+                    android:paddingStart="50dp"
+                    android:paddingTop="17dp"
+                    android:paddingBottom="17dp"
+                    android:textColorHint="@color/black"
+                    android:textSize="19sp"
+                    app:layout_constraintTop_toBottomOf="@id/email_edit" />
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="15dp"
+                    android:src="@drawable/ic_round_location_on_24"
+                    android:translationZ="1dp"
+                    app:layout_constraintBottom_toBottomOf="@id/no_edit"
+                    app:layout_constraintStart_toStartOf="@id/no_edit"
+                    app:layout_constraintTop_toTopOf="@id/no_edit" />
+
+
+                <EditText
+                    android:id="@+id/no_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginEnd="35dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/gray_235_back_18dp"
+                    android:fontFamily="@font/comforta_regular"
+                    android:hint="@string/No_exterior"
+                    android:inputType="text"
+                    android:maxLength="50"
+                    android:paddingStart="50dp"
+                    android:paddingTop="17dp"
+                    android:paddingBottom="17dp"
+                    android:textColorHint="@color/black"
+                    android:textSize="19sp"
+                    app:layout_constraintTop_toBottomOf="@id/street_edit" />
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="15dp"
+                    android:src="@drawable/ic_round_location_on_24"
+                    android:translationZ="1dp"
+                    app:layout_constraintBottom_toBottomOf="@id/colonia_edit"
+                    app:layout_constraintStart_toStartOf="@id/colonia_edit"
+                    app:layout_constraintTop_toTopOf="@id/colonia_edit" />
+
+
+                <EditText
+                    android:id="@+id/colonia_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginEnd="35dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/gray_235_back_18dp"
+                    android:fontFamily="@font/comforta_regular"
+                    android:hint="@string/colonia"
+                    android:inputType="text"
+                    android:maxLength="50"
+                    android:paddingStart="50dp"
+                    android:paddingTop="17dp"
+                    android:paddingBottom="17dp"
+                    android:textColorHint="@color/black"
+                    android:textSize="19sp"
+                    app:layout_constraintTop_toBottomOf="@id/no_edit" />
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="15dp"
+                    android:src="@drawable/ic_round_local_post_office_24"
+                    android:translationZ="1dp"
+                    app:layout_constraintBottom_toBottomOf="@id/postal_code_edit"
+                    app:layout_constraintStart_toStartOf="@id/postal_code_edit"
+                    app:layout_constraintTop_toTopOf="@id/postal_code_edit" />
+
+
+                <EditText
+                    android:id="@+id/postal_code_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginEnd="35dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/gray_235_back_18dp"
+                    android:fontFamily="@font/comforta_regular"
+                    android:hint="@string/postal_code"
+                    android:inputType="number"
+                    android:maxLength="50"
+                    android:paddingStart="50dp"
+                    android:paddingTop="17dp"
+                    android:paddingBottom="17dp"
+                    android:textColorHint="@color/black"
+                    android:textSize="19sp"
+                    app:layout_constraintTop_toBottomOf="@id/colonia_edit" />
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="15dp"
+                    android:src="@drawable/ic_round_location_city_24"
+                    android:translationZ="1dp"
+                    app:layout_constraintBottom_toBottomOf="@id/city_edit"
+                    app:layout_constraintStart_toStartOf="@id/city_edit"
+                    app:layout_constraintTop_toTopOf="@id/city_edit" />
+
+
+                <EditText
+                    android:id="@+id/city_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginEnd="35dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/gray_235_back_18dp"
+                    android:fontFamily="@font/comforta_regular"
+                    android:hint="@string/city"
+                    android:inputType="text"
+                    android:maxLength="50"
+                    android:paddingStart="50dp"
+                    android:paddingTop="17dp"
+                    android:paddingBottom="17dp"
+                    android:textColorHint="@color/black"
+                    android:textSize="19sp"
+                    app:layout_constraintTop_toBottomOf="@id/postal_code_edit" />
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="15dp"
+                    android:src="@drawable/ic_round_location_on_24"
+                    android:translationZ="1dp"
+                    app:layout_constraintBottom_toBottomOf="@id/state_edit"
+                    app:layout_constraintStart_toStartOf="@id/state_edit"
+                    app:layout_constraintTop_toTopOf="@id/state_edit" />
+
+
+                <TextView
+                    android:id="@+id/state_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginEnd="35dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/gray_235_back_18dp"
+                    android:fontFamily="@font/comforta_regular"
+                    android:paddingStart="50dp"
+                    android:paddingTop="17dp"
+                    android:paddingBottom="17dp"
+                    android:textColor="@color/black"
+                    android:textSize="19sp"
+                    app:layout_constraintTop_toBottomOf="@id/city_edit" />
+
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="15dp"
+                    android:src="@drawable/ic_round_flag_24"
+                    android:translationZ="1dp"
+                    app:layout_constraintBottom_toBottomOf="@id/country_edit"
+                    app:layout_constraintStart_toStartOf="@id/country_edit"
+                    app:layout_constraintTop_toTopOf="@id/country_edit" />
+
+
+                <EditText
+                    android:id="@+id/country_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginEnd="35dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/gray_235_back_18dp"
+                    android:fontFamily="@font/comforta_regular"
+                    android:hint="@string/country"
+                    android:inputType="text"
+                    android:maxLength="50"
+                    android:paddingStart="50dp"
+                    android:paddingTop="17dp"
+                    android:paddingBottom="17dp"
+                    android:text="México"
+                    android:textColorHint="@color/black"
+                    android:textSize="19sp"
+                    app:layout_constraintTop_toBottomOf="@id/state_edit" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+
+        <Button
+            android:id="@+id/add_client"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="35dp"
+            android:background="@drawable/blue_gradient_15dp"
+            android:fontFamily="@font/comforta_bold"
+            android:padding="10dp"
+            android:text="@string/save"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

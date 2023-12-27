@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.savent.erp.presentation.viewmodel.LoginViewModel" />
+        <import type="android.view.View" />
+
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.ui.activity.LoginActivity">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/top_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.06"/>
+
+        <TextView
+            android:id="@+id/login_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginBottom="40dp"
+            android:fontFamily="@font/comforta_bold"
+            android:lineSpacingMultiplier="1.1"
+            android:text="@string/login"
+            android:textColor="@color/white"
+            android:textSize="65sp"
+            app:layout_constraintTop_toTopOf="@id/top_guideline"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+
+        <ProgressBar
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:indeterminate="true"
+            app:layout_constraintBottom_toTopOf="@id/bottom_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintDimensionRatio="4.5:1"
+            android:layout_marginBottom="25dp"
+            android:indeterminateTint="@color/white"
+            android:visibility= "@{viewModel.loading? View.VISIBLE: View.GONE}"
+            android:translationZ="20dp"
+            app:indicatorColor="@color/white"
+            />
+
+        <View
+            android:id="@+id/top_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="-50dp"
+            android:background="@drawable/primary_blue_gradient"
+            android:translationZ="-1dp"
+            app:layout_constraintBottom_toTopOf="@id/bottom_layout"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/bottom_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/white_back_20dp_top"
+            android:elevation="15dp"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="15dp"
+                android:src="@drawable/ic_round_info_24"
+                android:translationZ="1dp"
+                app:layout_constraintBottom_toBottomOf="@id/company_edit"
+                app:layout_constraintStart_toStartOf="@id/company_edit"
+                app:layout_constraintTop_toTopOf="@id/company_edit" />
+
+            <TextView
+                android:id="@+id/company_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="35dp"
+                android:layout_marginEnd="35dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/gray_235_back_18dp"
+                android:fontFamily="@font/comforta_regular"
+                android:hint="@string/companies"
+                android:textColorHint="@color/black"
+                android:paddingStart="50dp"
+                android:paddingTop="14dp"
+                android:paddingBottom="14dp"
+                android:textColor="@color/black"
+                android:textSize="19sp"
+                app:layout_constraintBottom_toTopOf="@id/rfc_edit"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="15dp"
+                android:src="@drawable/ic_round_person_24"
+                android:translationZ="1dp"
+                app:layout_constraintBottom_toBottomOf="@id/rfc_edit"
+                app:layout_constraintStart_toStartOf="@id/rfc_edit"
+                app:layout_constraintTop_toTopOf="@id/rfc_edit" />
+
+            <EditText
+                android:id="@+id/rfc_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="35dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="35dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/gray_235_back_18dp"
+                android:fontFamily="@font/comforta_regular"
+                android:hint="@string/rfc"
+                android:paddingStart="50dp"
+                android:paddingTop="14dp"
+                android:paddingBottom="14dp"
+                android:textColorHint="@color/black"
+                android:textSize="19sp"
+                android:inputType="text"
+                android:maxLength="13"
+                app:layout_constraintBottom_toTopOf="@id/pin_edit"
+                app:layout_constraintTop_toBottomOf="@id/rfc_edit" />
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="15dp"
+                android:src="@drawable/ic_round_vpn_key_24"
+                android:translationZ="1dp"
+                app:layout_constraintBottom_toBottomOf="@id/pin_edit"
+                app:layout_constraintStart_toStartOf="@id/pin_edit"
+                app:layout_constraintTop_toTopOf="@id/pin_edit" />
+
+            <EditText
+                android:id="@+id/pin_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="35dp"
+                android:layout_marginEnd="35dp"
+                android:layout_marginBottom="14dp"
+                android:background="@drawable/gray_235_back_18dp"
+                android:fontFamily="@font/comforta_regular"
+                android:hint="@string/pin"
+                android:inputType="text"
+                android:paddingStart="50dp"
+                android:paddingTop="14dp"
+                android:paddingBottom="14dp"
+                android:textColorHint="@color/black"
+                android:textSize="19sp"
+                android:maxLength="50"
+                app:layout_constraintBottom_toTopOf="@id/store_edit"
+                app:layout_constraintTop_toBottomOf="@id/rfc_edit"/>
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="15dp"
+                android:src="@drawable/ic_round_store_24"
+                android:translationZ="1dp"
+                app:layout_constraintBottom_toBottomOf="@id/store_edit"
+                app:layout_constraintStart_toStartOf="@id/store_edit"
+                app:layout_constraintTop_toTopOf="@id/store_edit" />
+
+            <TextView
+                android:id="@+id/store_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="35dp"
+                android:layout_marginEnd="35dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/gray_235_back_18dp"
+                android:fontFamily="@font/comforta_regular"
+                android:hint="@string/stores"
+                android:textColorHint="@color/black"
+                android:paddingStart="50dp"
+                android:paddingTop="14dp"
+                android:paddingBottom="14dp"
+                android:textColor="@color/black"
+                android:textSize="19sp"
+                app:layout_constraintTop_toBottomOf="@id/pin_edit"
+                app:layout_constraintBottom_toTopOf="@id/login_button" />
+
+            <Button
+                android:id="@+id/login_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="35dp"
+                android:padding="10dp"
+                android:background="@drawable/blue_gradient_15dp"
+                android:fontFamily="@font/comforta_bold"
+                android:text="@string/start"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:onClick="login"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

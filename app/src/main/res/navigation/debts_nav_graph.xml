@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/debts_nav_graph"
+    app:startDestination="@id/clientWithDebtsFragment">
+
+    <fragment
+        android:id="@+id/clientWithDebtsFragment"
+        android:name="com.savent.erp.presentation.ui.fragment.ClientsWithDebtsFragment"
+        android:label="fragment_client_with_debts"
+        tools:layout="@layout/fragment_clients_with_debts" >
+        <action
+            android:id="@+id/action_clientWithDebtsFragment_to_incompletePaymentsFragment"
+            app:destination="@id/incompletePaymentsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/incompletePaymentsFragment"
+        android:name="com.savent.erp.presentation.ui.fragment.IncompletePaymentsFragment"
+        android:label="fragment_incomplete_payments"
+        tools:layout="@layout/fragment_incomplete_payments" />
+</navigation>

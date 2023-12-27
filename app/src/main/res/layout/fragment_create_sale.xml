@@ -1,0 +1,176 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.savent.erp.presentation.viewmodel.ClientsViewModel" />
+
+        <import type="android.view.View" />
+
+    </data>
+
+    <androidx.constraintlayout.motion.widget.MotionLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutDescription="@xml/activity_create_sell_scene"
+        tools:context=".presentation.ui.fragment.CreateSaleFragment">
+
+        <LinearLayout
+            android:id="@+id/go_map"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/go_on"
+            android:elevation="6dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/white_back_20dp"
+            >
+
+            <ImageView
+                android:id="@+id/go_map_icon"
+                android:layout_width="50dp"
+                android:layout_height="45dp"
+                android:layout_margin="10dp"
+                android:src="@drawable/map_draw"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/back_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="15dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="@drawable/ripple_8dp"
+            android:padding="4dp"
+            android:src="@drawable/ic_round_arrow_back_24"
+            android:tint="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/screen_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginBottom="1dp"
+            android:fontFamily="@font/comforta_bold"
+            android:text="@string/clients"
+            android:textColor="@color/black"
+            android:textSize="26sp"
+            app:layout_constraintBottom_toBottomOf="@id/back_button"
+            app:layout_constraintEnd_toStartOf="@id/search"
+            app:layout_constraintStart_toEndOf="@id/back_button" />
+
+        <EditText
+            android:id="@+id/search_edit"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="-2dp"
+            android:alpha="0"
+            android:background="@drawable/gray_235_back_18dp"
+            android:fontFamily="@font/comforta_semibold"
+            android:hint="@string/search"
+            android:paddingStart="20dp"
+            android:paddingTop="11dp"
+            android:paddingBottom="11dp"
+            android:textSize="19sp"
+            app:layout_constraintBottom_toBottomOf="@id/search"
+            app:layout_constraintEnd_toEndOf="@id/search"
+            app:layout_constraintStart_toStartOf="@id/search"
+            app:layout_constraintTop_toTopOf="@id/search" />
+
+        <ImageView
+            android:id="@+id/add_client"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/white_back_8dp"
+            android:backgroundTint="@color/gray_243"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="@drawable/ripple_8dp"
+            android:padding="5dp"
+            android:src="@drawable/ic_outline_person_add_alt_1_24"
+            android:tint="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/search"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="6dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="@drawable/ripple_8dp"
+            android:padding="5dp"
+            android:src="@drawable/ic_round_search_24"
+            android:tint="@color/black"
+            app:layout_constraintEnd_toStartOf="@id/add_client"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/refresh_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintBottom_toTopOf="@id/go_on"
+            app:layout_constraintTop_toBottomOf="@id/screen_title">
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/clients_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <LinearLayout
+            android:id="@+id/filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:elevation="1dp"
+            android:background="@drawable/white_back_20dp"
+            android:padding="12dp"
+            app:layout_constraintEnd_toStartOf="@id/go_on"
+            app:layout_constraintBottom_toBottomOf="@id/go_on"
+            app:layout_constraintStart_toStartOf="parent"
+            >
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/filter"
+                android:tint="@color/primary_blue"
+                />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/go_on"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:background="@drawable/blue_gradient_15dp"
+            android:fontFamily="@font/comforta_bold"
+            android:padding="10dp"
+            android:text="@string/go_on"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            app:layout_constraintStart_toEndOf="@id/filter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.motion.widget.MotionLayout>
+</layout>

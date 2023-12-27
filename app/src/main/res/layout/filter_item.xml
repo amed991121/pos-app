@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginStart="25dp"
+    android:layout_marginTop="25dp"
+    android:layout_marginEnd="25dp"
+    android:background="@drawable/white_back_20dp"
+    android:backgroundTint="@color/gray_248"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="@drawable/ripple_8dp"
+    >
+
+    <TextView
+        android:id="@+id/filter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/comforta_semibold"
+        android:text="Plan de Carga"
+        android:textColor="@color/black"
+        android:textSize="21sp"
+        android:singleLine="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/filter"
+        app:layout_constraintTop_toTopOf="@id/check"
+        app:layout_constraintBottom_toBottomOf="@id/check"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="15dp"
+        />
+
+    <ImageView
+        android:id="@+id/check"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/ic_round_check_circle_24"
+        android:tint="@color/primary_blue"
+        android:elevation="2dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="15dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

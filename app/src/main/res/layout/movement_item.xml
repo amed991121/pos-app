@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="15dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginEnd="15dp"
+    android:layout_marginBottom="5dp">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/input"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/movement_type"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="-7dp"
+        android:fontFamily="@font/comforta_bold"
+        android:singleLine="true"
+        android:text="ENTRADA"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintEnd_toStartOf="@id/product_icon"
+        app:layout_constraintStart_toEndOf="@id/image"
+        app:layout_constraintTop_toTopOf="@id/image" />
+
+    <ImageView
+        android:id="@+id/product_icon"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/box"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintTop_toTopOf="@id/movement_type"
+        app:layout_constraintEnd_toStartOf="@id/product_units"
+        />
+
+    <TextView
+        android:id="@+id/product_units"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/comforta_bold"
+        android:singleLine="true"
+        android:text="5"
+        android:textColor="@color/red"
+        android:textSize="18sp"
+        android:layout_marginStart="5dp"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/product_icon"
+        />
+
+    <ImageView
+        android:id="@+id/date_icon"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/calendar_draw1"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/movement_type"
+        app:layout_constraintTop_toBottomOf="@id/movement_type"
+        />
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/comforta_bold"
+        android:singleLine="true"
+        android:text="11/12/2022"
+        android:textColor="@color/dark_blue"
+        android:textSize="18sp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@id/date_icon"
+        app:layout_constraintTop_toTopOf="@id/date_icon"
+        app:layout_constraintBottom_toBottomOf="@id/date_icon"/>
+
+    <View
+        android:id="@+id/div1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="3dp"
+        android:background="@color/gray_215_A50"
+        app:layout_constraintTop_toBottomOf="@id/date" />
+
+    <ImageView
+        android:id="@+id/reason_icon"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/white_back_8dp"
+        android:backgroundTint="@color/gray_235"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="5dp"
+        android:src="@drawable/news"
+        android:tint="@color/black"
+        app:layout_constraintStart_toStartOf="@id/image"
+        app:layout_constraintTop_toBottomOf="@id/div1"   />
+
+
+    <TextView
+        android:id="@+id/reason_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        app:layout_constraintVertical_bias="0.1"
+        android:fontFamily="@font/comforta_semibold"
+        android:text="@string/_reason"
+        android:textColor="@color/dark_blue"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@id/reason_icon"
+        app:layout_constraintTop_toTopOf="@id/reason_icon"
+        app:layout_constraintBottom_toBottomOf="@id/reason_icon"/>
+
+    <TextView
+        android:id="@+id/reason"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/comforta_semibold"
+        android:textColor="@color/black"
+        android:text="Compra"
+        android:textSize="20sp"
+        android:singleLine="true"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/reason_label"
+        app:layout_constraintStart_toEndOf="@id/reason_label"
+        app:layout_constraintTop_toTopOf="@id/reason_label" />
+
+    <ImageView
+        android:id="@+id/employee_icon"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/white_back_8dp"
+        android:backgroundTint="@color/gray_235"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="5dp"
+        android:src="@drawable/user"
+        android:tint="@color/black"
+        app:layout_constraintStart_toStartOf="@id/image"
+        app:layout_constraintTop_toBottomOf="@id/reason_label" />
+
+    <TextView
+        android:id="@+id/employee_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:fontFamily="@font/comforta_semibold"
+        android:text="@string/_employee"
+        android:textColor="@color/dark_blue"
+        android:textSize="20sp"
+        app:layout_constraintVertical_bias="0.1"
+        app:layout_constraintStart_toEndOf="@id/employee_icon"
+        app:layout_constraintBottom_toBottomOf="@id/employee_icon"
+        app:layout_constraintTop_toTopOf="@id/employee_icon"
+        />
+
+    <TextView
+        android:id="@+id/employee"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/comforta_semibold"
+        android:text="Angel Claveria"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintBottom_toBottomOf="@id/employee_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/employee_label"
+        app:layout_constraintTop_toTopOf="@id/employee_label" />
+
+
+    <ImageView
+        android:id="@+id/purchase_icon"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/white_back_8dp"
+        android:backgroundTint="@color/gray_235"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="5dp"
+        android:src="@drawable/bags_shopping"
+        android:tint="@color/black"
+        app:layout_constraintStart_toStartOf="@id/image"
+        app:layout_constraintTop_toBottomOf="@id/employee_label" />
+
+    <TextView
+        android:id="@+id/purchase_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:fontFamily="@font/comforta_semibold"
+        android:text="@string/purchase_id"
+        android:textColor="@color/dark_blue"
+        android:textSize="20sp"
+        app:layout_constraintVertical_bias="0.1"
+        app:layout_constraintStart_toEndOf="@id/purchase_icon"
+        app:layout_constraintBottom_toBottomOf="@id/purchase_icon"
+        app:layout_constraintTop_toTopOf="@id/purchase_icon"
+        />
+
+    <TextView
+        android:id="@+id/purchase_id"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/comforta_semibold"
+        android:text="6745"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintBottom_toBottomOf="@id/purchase_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/purchase_label"
+        app:layout_constraintTop_toTopOf="@id/purchase_label" />
+
+    <ImageView
+        android:id="@+id/store_icon"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/white_back_8dp"
+        android:backgroundTint="@color/gray_235"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="5dp"
+        android:src="@drawable/store"
+        android:tint="@color/black"
+        app:layout_constraintStart_toStartOf="@id/image"
+        app:layout_constraintTop_toBottomOf="@id/purchase_label" />
+
+    <TextView
+        android:id="@+id/input_store_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:fontFamily="@font/comforta_semibold"
+        android:text="@string/_input_store"
+        android:textColor="@color/dark_blue"
+        android:textSize="20sp"
+        app:layout_constraintVertical_bias="0.1"
+        app:layout_constraintStart_toEndOf="@id/store_icon"
+        app:layout_constraintBottom_toBottomOf="@id/store_icon"
+        app:layout_constraintTop_toTopOf="@id/store_icon"
+        />
+
+    <TextView
+        android:id="@+id/input_store"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/comforta_semibold"
+        android:text="Puerta Grande"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintBottom_toBottomOf="@id/input_store_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/input_store_label"
+        app:layout_constraintTop_toTopOf="@id/input_store_label" />
+
+    <ImageView
+        android:id="@+id/person_icon"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/white_back_8dp"
+        android:backgroundTint="@color/gray_235"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="5dp"
+        android:src="@drawable/user"
+        android:tint="@color/black"
+        app:layout_constraintStart_toStartOf="@id/image"
+        app:layout_constraintTop_toBottomOf="@id/input_store_label" />
+
+    <TextView
+        android:id="@+id/input_store_keeper_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:fontFamily="@font/comforta_semibold"
+        android:text="@string/_input_store_keeper"
+        android:textColor="@color/dark_blue"
+        android:textSize="20sp"
+        app:layout_constraintVertical_bias="0.1"
+        app:layout_constraintStart_toEndOf="@id/person_icon"
+        app:layout_constraintBottom_toBottomOf="@id/person_icon"
+        app:layout_constraintTop_toTopOf="@id/person_icon"
+        />
+
+    <TextView
+        android:id="@+id/input_store_keeper"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/comforta_semibold"
+        android:text="Angel Claveria"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintBottom_toBottomOf="@id/input_store_keeper_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/input_store_keeper_label"
+        app:layout_constraintTop_toTopOf="@id/input_store_keeper_label" />
+
+    <ImageView
+        android:id="@+id/store_icon2"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/white_back_8dp"
+        android:backgroundTint="@color/gray_235"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="5dp"
+        android:src="@drawable/store"
+        android:tint="@color/black"
+        app:layout_constraintStart_toStartOf="@id/image"
+        app:layout_constraintTop_toBottomOf="@id/input_store_keeper_label" />
+
+    <TextView
+        android:id="@+id/output_store_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:fontFamily="@font/comforta_semibold"
+        android:text="@string/_output_store"
+        android:textColor="@color/dark_blue"
+        android:textSize="20sp"
+        app:layout_constraintVertical_bias="0.1"
+        app:layout_constraintStart_toEndOf="@id/store_icon2"
+        app:layout_constraintBottom_toBottomOf="@id/store_icon2"
+        app:layout_constraintTop_toTopOf="@id/store_icon2"
+        />
+
+    <TextView
+        android:id="@+id/output_store"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/comforta_semibold"
+        android:text="Bugambilias"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintBottom_toBottomOf="@id/output_store_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/output_store_label"
+        app:layout_constraintTop_toTopOf="@id/output_store_label" />
+
+    <ImageView
+        android:id="@+id/person_icon2"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/white_back_8dp"
+        android:backgroundTint="@color/gray_235"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="5dp"
+        android:src="@drawable/user"
+        android:tint="@color/black"
+        app:layout_constraintStart_toStartOf="@id/image"
+        app:layout_constraintTop_toBottomOf="@id/output_store_label" />
+
+    <TextView
+        android:id="@+id/output_store_keeper_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:fontFamily="@font/comforta_semibold"
+        android:text="@string/_output_store_keeper"
+        android:textColor="@color/dark_blue"
+        android:textSize="20sp"
+        app:layout_constraintVertical_bias="0.1"
+        app:layout_constraintStart_toEndOf="@id/person_icon2"
+        app:layout_constraintBottom_toBottomOf="@id/person_icon2"
+        app:layout_constraintTop_toTopOf="@id/person_icon2"
+        />
+
+    <TextView
+        android:id="@+id/output_store_keeper"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/comforta_semibold"
+        android:text="Wilberto Perez Samora"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintBottom_toBottomOf="@id/output_store_keeper_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/output_store_keeper_label"
+        app:layout_constraintTop_toTopOf="@id/output_store_keeper_label" />
+
+    <ImageView
+        android:id="@+id/info_icon"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="5dp"
+        android:src="@drawable/ic_round_info_24"
+        android:tint="@color/red"
+        android:visibility="visible"
+        android:layout_marginBottom="2dp"
+        app:layout_constraintBottom_toBottomOf="@id/info_tv"
+        app:layout_constraintStart_toStartOf="@id/person_icon2"
+        />
+
+
+    <TextView
+        android:id="@+id/info_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:fontFamily="@font/comforta_semibold"
+        android:singleLine="true"
+        android:text="@string/pending_sending"
+        android:textColor="@color/red"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@id/time"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintVertical_bias="1"
+        app:layout_constraintStart_toEndOf="@id/info_icon"
+        app:layout_constraintTop_toBottomOf="@id/output_store_keeper_label" />
+
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/comforta_semibold"
+        android:text="11:00 AM"
+        android:textSize="15sp"
+        android:textColor="@color/dark_blue"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/output_store_keeper"
+        />
+
+    <View
+        android:id="@+id/bottom_div"
+        android:layout_width="match_parent"
+        android:layout_height="0.7dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/time" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

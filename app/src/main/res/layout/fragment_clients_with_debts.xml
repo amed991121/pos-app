@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.savent.erp.presentation.viewmodel.DebtsViewModel" />
+        <import type="android.view.View" />
+
+    </data>
+    <androidx.constraintlayout.motion.widget.MotionLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutDescription="@xml/activity_create_sell_scene"
+        tools:context=".presentation.ui.fragment.ClientsWithDebtsFragment">
+
+        <ImageView
+            android:id="@+id/back_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="15dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="@drawable/ripple_8dp"
+            android:padding="4dp"
+            android:src="@drawable/ic_round_arrow_back_24"
+            android:tint="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:onClick="back"
+            />
+
+        <TextView
+            android:id="@+id/screen_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="2dp"
+            android:fontFamily="@font/comforta_bold"
+            android:text="@string/clients_with_debts"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:singleLine="true"
+            android:textSize="26sp"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@id/back_button"
+            app:layout_constraintEnd_toStartOf="@id/search"
+            app:layout_constraintBottom_toBottomOf="@id/back_button" />
+
+        <EditText
+            android:id="@+id/search_edit"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="-2dp"
+            android:alpha="0"
+            android:background="@drawable/gray_235_back_18dp"
+            android:fontFamily="@font/comforta_semibold"
+            android:hint="@string/search"
+            android:paddingStart="20dp"
+            android:paddingTop="11dp"
+            android:paddingBottom="11dp"
+            android:textSize="19sp"
+            app:layout_constraintTop_toTopOf="@id/search"
+            app:layout_constraintBottom_toBottomOf="@id/search"
+            app:layout_constraintEnd_toEndOf="@id/search"
+            app:layout_constraintStart_toStartOf="@id/search" />
+
+        <ImageView
+            android:id="@+id/search"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="20dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="@drawable/ripple_8dp"
+            android:padding="5dp"
+            android:src="@drawable/ic_round_search_24"
+            android:tint="@color/black"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@id/screen_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/screen_title"
+            app:layout_constraintBottom_toBottomOf="@id/screen_title"/>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/refresh_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintTop_toBottomOf="@id/screen_title"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/clients_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+
+
+    </androidx.constraintlayout.motion.widget.MotionLayout>
+</layout>

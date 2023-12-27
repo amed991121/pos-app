@@ -1,0 +1,346 @@
+<resources>
+    <string name="app_name">Savent POS</string>
+
+    <string name="empty" />
+
+    <string name="start">Iniciar</string>
+
+    <string name="username">Usuario</string>
+
+    <string name="phone_number">Teléfono</string>
+
+    <string name="email">Email</string>
+
+    <string name="street">Calle</string>
+
+    <string name="No_exterior">No Exterior</string>
+
+    <string name="colonia">Colonia</string>
+
+    <string name="postal_code">Código postal</string>
+
+    <string name="city">Ciudad</string>
+
+    <string name="state">Estado</string>
+
+    <string name="country">Pais</string>
+
+    <string name="name">Nombre</string>
+
+    <string name="paternal">Paterno</string>
+
+    <string name="maternal">Materno</string>
+
+    <string name="social_reason">Razón Social (Para Empresas)</string>
+
+    <string name="rfc">RFC</string>
+
+    <string name="pin">Pin</string>
+
+    <string name="store">Almacén</string>
+
+    <string name="password">Contraseña</string>
+
+    <string name="login">Iniciar \nSesión</string>
+
+    <string name="create_sale">Crear venta</string>
+
+    <string name="add_client">Añadir cliente</string>
+
+
+    <string name="save">Guardar</string>
+    <string name="clients">Clientes</string>
+    <string name="clients_with_debts">Clientes con Deudas</string>
+    <string name="debts_header">Deudas</string>
+    <string name="debt">Debe</string>
+    <string name="for_pay">Por Pagar</string>
+    <string name="last_sales">Ventas del día</string>
+    <string name="last_debt_payments">Abonos del día</string>
+    <string name="go_on">Continuar</string>
+    <string name="search">Buscar...</string>
+    <string name="products">Productos</string>
+    <string name="remaining">restantes</string>
+    <string name="checkout">Finalizar</string>
+    <string name="check_order">Revisar orden</string>
+    <string name="see_list">Ver lista</string>
+    <string name="hide_list">Ocultar lista</string>
+    <string name="articles">articulos</string>
+    <string name="articles_format">%s articulos</string>
+    <string name="subtotal">Subtotal</string>
+    <string name="tax">Impuestos</string>
+    <string name="discounts">Descuentos</string>
+    <string name="total">Total</string>
+    <string name="to_pay">A Pagar</string>
+    <string name="collected">Cobrado</string>
+    <string name="paid_out">Pagado</string>
+    <string name="change">Cambio</string>
+    <string name="cash">Efectivo</string>
+    <string name="credit">Crédito</string>
+    <string name="debit">Débito</string>
+    <string name="transfer">Transferencia</string>
+    <string name="electronic_transfer">Transferencia Electrónica de Fondos</string>
+    <string name="revenues">Ingresos: </string>
+    <string name="debts">Por Cobrar: </string>
+    <string name="extra_discounts">Descuento Extra </string>
+    <string name="sending_email">Enviar email usando...</string>
+    <string name="mail_app_not_found">No se encontró una app de correo</string>
+    <string name="sending_sms">Enviar sms usando...</string>
+    <string name="sms_app_not_found">No se encontró una app de sms</string>
+    <string name="whatsapp_not_found">No se encontró WhatsApp</string>
+    <string name="whatsapp">Whatsapp</string>
+    <string name="sms">Mensaje de texto</string>
+    <string name="bluetooth_printer">Impresora Bluetooth</string>
+    <string name="file_receipt_name">Nota de Compra (Savent POS)</string>
+    <string name="share_receipt_header">Compartir Nota por ...</string>
+    <string name="send_receipt_header">Enviar Nota por ...</string>
+    <string name="receipt_subject">Envio de Nota de Compra</string>
+    <string name="confirm_exit">Quieres salir de este almacén?</string>
+    <string name="accept">Aceptar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="_reason">Motivo:</string>
+    <string name="_output_store">Almacén Salida:</string>
+    <string name="_input_store">Almacén Entrada:</string>
+    <string name="_output_store_keeper">Entregado por:</string>
+    <string name="_input_store_keeper">Recibido por:</string>
+    <string name="purchase_id">Id Compra:</string>
+    <string name="_employee">Responsable:</string>
+    <string name="provider">Proveedor:</string>
+    <string name="_remaining">Restantes:</string>
+    <string name="amount">Importe:</string>
+    <string name="create_movement">Crear Movimiento</string>
+    <string name="reason">Motivo</string>
+    <string name="purchase">Compra</string>
+    <string name="purchases">Compras</string>
+    <string name="input_store_keeper">Almacenista Entrada</string>
+    <string name="input_store">Almacén Entrada</string>
+    <string name="output_store_keeper">Almacenista Salida</string>
+    <string name="output_store">Almacén Salida</string>
+    <string name="movements">Movimientos</string>
+
+    <string name="connection_error"> Error al conectar con el servidor!</string>
+    <string name="internet_error"> Por favor, chequee su conexión a internet!</string>
+    <string name="unknown_error">Ups, lo sentimos! Ocurrió un error desconocido</string>
+    <string name="sync_error">Falló la sincronización!</string>
+    <string name="credit_limit_exceed">Superó su límite de crédito</string>
+    <string name="save_data_error">Ocurrió un error guardando los datos</string>
+    <string name="retrieve_data_error">Ocurrió un error recuperando los datos</string>
+    <string name="save_login_credentials_error"> Ups, lo sentimos! Ocurrió un error al guardar sus credenciales</string>
+    <string name="delete_login_credentials_error"> Ups, lo sentimos! Ocurrió un error al eliminar sus credenciales</string>
+    <string name="fetch_login_credentials_error"> Ups, ocurrió un error al recuperar sus credenciales</string>
+    <string name="match_username_login_credentials_error"> Usuario inválido</string>
+    <string name="match_password_login_credentials_error"> Contraseña inválida</string>
+    <string name="match_login_credentials_error"> Sus credentiales de inicio son invalidas. Intente con otras.</string>
+
+    <string name="insert_products_error"> Error al guardar los productos</string>
+    <string name="add_product_error"> Error al añadir el nuevo producto</string>
+    <string name="get_products_error"> Error al cargar los productos</string>
+    <string name="get_products_empty"> No hay productos  que coincidan con su busqueda</string>
+    <string name="update_product_error"> Error al actualizar los datos del producto</string>
+    <string name="delete_product_error"> Error al eliminar el producto</string>
+    <string name="delete_products_error"> Error al eliminar los productos</string>
+    <string name="fetch_products_error"> Error al actualizar los productos</string>
+
+    <string name="insert_discounts_error"> Error al insertar los descuentos</string>
+    <string name="get_discounts_error"> Error al cargar los descuentos</string>
+    <string name="discounts_not_found"> No se encontraron descuentos aplicables</string>
+
+    <string name="insert_clients_error"> Error al guardar los clientes</string>
+    <string name="add_client_error"> Error al añadir el nuevo cliente</string>
+    <string name="get_clients_error"> Error al cargar los clientes</string>
+    <string name="get_clients_empty"> No hay clientes  que coincidan con su busqueda</string>
+    <string name="update_client_error"> Error al actualizar los datos del cliente</string>
+    <string name="delete_client_error"> Error al eliminar el cliente</string>
+    <string name="delete_clients_error"> Error al eliminar los clientes</string>
+    <string name="get_map_client_items_empty"> No se logró localizar ningun cliente</string>
+
+    <string name="insert_sale_error"> Error al registrar la venta</string>
+    <string name="insert_sales_error"> Error al guardar las ventas</string>
+    <string name="get_sales_error"> Error al cargar las ventas</string>
+    <string name="update_sale_error"> Error al actualizar los datos de la venta</string>
+    <string name="save_note_error"> Error al guardar la nota de venta</string>
+
+    <string name="insert_movement_error"> Error al registrar el movimiento</string>
+    <string name="insert_movements_error"> Error al guardar los movimientos</string>
+    <string name="get_movements_error"> Error al cargar las movimientos</string>
+    <string name="update_movement_error"> Error al actualizar los datos del movimiento</string>
+    <string name="update_movements_error"> Error al actualizar los movimientos</string>
+    <string name="get_movements_empty"> No existen movimientos registrados hoy</string>
+    <string name="sync_movements_error">Error al enviar los movimientos pendientes</string>
+    <string name="movement_reason_required">Seleccione un motivo de movimiento para continuar</string>
+
+    <string name="insert_employees_error"> Error al guardar los empleados</string>
+    <string name="get_employees_error"> Error al cargar las empleados</string>
+    <string name="get_employees_empty"> No se encontraron empleados</string>
+    <string name="sync_employees_error">Error al actualizar los empleados</string>
+    <string name="store_keeper_required">Seleccione loas almacenistas para continuar</string>
+
+    <string name="insert_reasons_error"> Error al guardar los motivos de traspaso</string>
+    <string name="get_reasons_error"> Error al cargar los motivos de traspaso</string>
+    <string name="get_reasons_empty"> No se encontraron motivos de traspaso</string>
+    <string name="sync_reasons_error">Error al actualizar los motivos de traspaso</string>
+
+    <string name="insert_providers_error"> Error al guardar los proveedores</string>
+    <string name="get_providers_error"> Error al cargar los provedores</string>
+    <string name="get_providers_empty"> No se encontraron proveedores</string>
+    <string name="sync_providers_error">Error al actualizar los proveedores</string>
+
+    <string name="insert_purchases_error"> Error al guardar las compras</string>
+    <string name="get_purchases_error"> Error al cargar las compras</string>
+    <string name="purchase_not_available"> Compra no disponible</string>
+    <string name="update_purchase_error"> Error al actualizar la compra</string>
+    <string name="get_purchases_empty"> No se encontraron compras disponibles</string>
+    <string name="sync_purchases_error">Error al actualizar las compras</string>
+    <string name="purchase_required">Seleccione una compra para continuar</string>
+
+    <string name="insert_business_error"> Ups, lo sentimos! Ocurrió un error al guardar los datos de su negocio</string>
+    <string name="get_business_error"> Error al recuperar los datos del negocio</string>
+    <string name="update_business_error"> Error al actualizar los datos del negocio</string>
+
+    <string name="insert_incomplete_payments_error"> Error al guardar los pagos pendientes</string>
+    <string name="get_incomplete_payments_error"> Error al cargar los pagos pendientes</string>
+    <string name="get_incomplete_payments_empty"> Este cliente saldo todas sus deudas</string>
+    <string name="update_incomplete_payments_error"> Error al actualizar los pagos pendientes</string>
+    <string name="delete_incomplete_payments_error"> Error al eliminar el pago pendiente</string>
+
+    <string name="insert_debt_payments_error"> Error al guardar los abonos</string>
+    <string name="get_debt_payments_error"> Error al cargar los pagos de abonos a las deudas</string>
+    <string name="get_debt_payments_empty"> No hay abonos  que coincidan con su busqueda</string>
+    <string name="update_debt_payments_error"> Error al actualizar los pagos pendientes</string>
+
+    <string name="sync_input_error"> Error al actualizar los datos locales</string>
+    <string name="sync_output_error"> Error al actualizar los datos remotos</string>
+
+    <string name="sync_clients_error"> Error al sincronizar los clientes</string>
+    <string name="sync_sales_error"> Error al sincronizar las ventas</string>
+    <string name="sync_debt_payments_error"> Error al sincronizar los abonos</string>
+
+    <string name="get_stats_error"> Error al cargar las estadísticas del negocio</string>
+
+    <string name="offline"> Sin conexión a internet!</string>
+    <string name="online"> De nuevo en línea!</string>
+
+    <string name="price">$ %s</string>
+    <string name="remaining_units">%s restantes</string>
+    <string name="units">%s unidades</string>
+
+    <string name="invalid_client">Datos del cliente inválidos</string>
+    <string name="field_empty_error">Rellene el campo</string>
+    <string name="invalid_name">Nombre inválido!</string>
+    <string name="invalid_paternal_name">Nombre paterno inválido!</string>
+    <string name="invalid_maternal_name">Nombre materno inválido!</string>
+    <string name="invalid_social_reason">Razón social inválida!</string>
+    <string name="invalid_rfc">RFC inválido!</string>
+    <string name="invalid_phone">Número incorrecto!</string>
+    <string name="invalid_email">Email inválido!</string>
+    <string name="invalid_city">Ciudad inválida!</string>
+    <string name="invalid_state">Estado inválido!</string>
+    <string name="invalid_country">Pais inválido!</string>
+
+    <string name="client_not_added">Seleccione un cliente por favor</string>
+    <string name="one_product_at_least">Seleccione al menos un producto</string>
+    <string name="register_amount_collected">Registre el monto cobrado</string>
+    <string name="without_sales">No hay ventas registradas hoy que coincidan con la búsqueda</string>
+    <string name="location_error">No hemos podido localizarte</string>
+    <string name="locating_you">Localizandote...</string>
+    <string name="connect_to_network_for_locating_you">Conéctate a una red para localizarte</string>
+
+    <string-array name="clients_filter">
+        <item>Almacén</item>
+        <item>Todos</item>
+    </string-array>
+
+    <string-array name="products_filter">
+        <item>Plan de Carga</item>
+        <item>Todos</item>
+    </string-array>
+
+    <string-array name="mexico_states">
+        <item>Aguascalientes</item>
+        <item>Baja California</item>
+        <item>Baja California Sur</item>
+        <item>Campeche</item>
+        <item>Chiapas</item>
+        <item>Ciudad de México</item>
+        <item>Estado de México</item>
+        <item>Guanajuato</item>
+        <item>Guerrero</item>
+        <item>Hidalgo</item>
+        <item>Jalisco</item>
+        <item>Michocacán</item>
+        <item>Morelos</item>
+        <item>Nayarit</item>
+        <item>Nuevo León</item>
+        <item>Oaxaca</item>
+        <item>Puebla</item>
+        <item>Querétaro</item>
+        <item>San Luis Potosí</item>
+        <item>Sinaloa</item>
+        <item>Tabasco</item>
+        <item>Tamaulipas</item>
+        <item>Tlaxcala</item>
+        <item>Veracruz</item>
+        <item>Yucatán</item>
+        <item>Zacatecas</item>
+    </string-array>
+    <string-array name="payment_method">
+        <item>@string/cash</item>
+        <item>@string/credit</item>
+        <item>@string/debit</item>
+    </string-array>
+
+    <string name="input">Entrada</string>
+    <string name="output">Salida</string>
+    <string name="in_out">Entrada/Salida</string>
+    <string name="all">Todos</string>
+
+    <string name="date">Fecha:</string>
+    <string name="articles_number">No. de Articulos:</string>
+    <string name="total_debt">Deuda Total:</string>
+    <string name="to_collect">Por Cobrar</string>
+    <string name="collect">Cobrar</string>
+    <string name="filter_by">Filtrar Por..</string>
+    <string name="amount_collected">Monto Cobrado</string>
+    <string name="agree">Aceptar</string>
+    <string name="load_discounts">Cargar Descuentos</string>
+    <string name="pending_sending">Pendiente de envio</string>
+    <string name="sales_pending_sending">Pendientes de Envio:</string>
+    <string name="total_sales">Ventas Totales:</string>
+    <string name="sync_sales">Sincronizar Ventas</string>
+    <string name="payment_method">Método de Pago</string>
+    <string name="confirm_sale">Quieres finalizar la venta?</string>
+    <string name="stores">Almacenes</string>
+    <string name="employees">Empleados</string>
+    <string name="movement_reasons">Motivos</string>
+    <string name="states">Estados</string>
+    <string name="pending_data_to_sync">Existen datos pendientes de sincronizar</string>
+    <string name="sync_data">Sincronizar datos</string>
+    <string name="sync_debt_payments">Sincronizar Abonos</string>
+    <string name="total_collected">Total Cobrado</string>
+    <string name="total_debt_payments">Abonos Totales</string>
+    <string name="client">Cliente:</string>
+    <string name="debt_payments">Abonos</string>
+
+    <string name="insert_companies_error"> Error al guardar las empresas</string>
+    <string name="get_companies_error"> Error al obtener las empresas</string>
+    <string name="update_companies_error"> Error al actualizar los datos de las empresas</string>
+    <string name="delete_companies_error"> Error al eliminar las empresas</string>
+
+    <string name="insert_stores_error"> Error al guardar los almacenes</string>
+    <string name="get_stores_error"> Error al obtener los almacenes</string>
+    <string name="stores_empty">No se encontraron almacenes registrados</string>
+    <string name="update_stores_error"> Error al actualizar los datos de los almacenes</string>
+    <string name="delete_stores_error"> Error al eliminar los almacenes</string>
+    <string name="store_required">Seleccione los almacenes para continuar</string>
+
+    <string name="companies">Empresas</string>
+    <string name="select_company">Seleccione una Empresa para continuar</string>
+    <string name="unknown_company">Empresa Desconocida</string>
+    <string name="sync_company_local_data_error">Error al actualizar los datos locales de las empresas</string>
+
+    <string name="select_store">Seleccione un Almacén para continuar</string>
+    <string name="unknown_store">Almacén Desconocido</string>
+    <string name="sync_store_local_data_error">Error al actualizar los datos locales de los almacenes</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>
